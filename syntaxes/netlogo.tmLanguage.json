@@ -139,7 +139,7 @@
 		"operators": {
 			"name": "keyword.operator.symbols.netlogo",
 			"comment": "Operator Symbols",
-			"match": "(?<=\\s)(=|!=|>|>=|<|<=|&|&&|:|\\||\\|\\||\\+|-|\\*|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)",
+			"match": "(?<=\\s)(=|!=|>|>=|<|<=|&|&&|:|\\||\\|\\||\\+|-|\\*|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)"
 		},
 		"parens": {
 			"contentName": "meta.parens.netlogo",
@@ -162,7 +162,7 @@
 				{
 					"include": "$self"
 				}
-			],
+			]
 		},
 		"builtin_functions": {
 			"patterns": [
