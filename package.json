@@ -1,0 +1,25 @@
+{
+    "name": "language-netlogo-code",
+    "displayName": "Netlogo Syntax Highlighting",
+    "description": "Netlogo Syntax Highlighting",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "netlogo",
+            "aliases": ["NetLogo", "netlogo"],
+            "extensions": [".nlogo",".nls"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "netlogo",
+            "scopeName": "source.nlogo",
+            "path": "./syntaxes/netlogo.tmLanguage.json"
+        }]
+    }
+}

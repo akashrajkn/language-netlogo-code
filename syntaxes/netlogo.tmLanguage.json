@@ -1,0 +1,177 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "NetLogo",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#brackets"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#parens"
+		},
+		{
+			"include": "#builtin_functions"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.import.netlogo",
+					"match": "^\\s*(__includes)"
+				},
+				{
+					"name": "storage.modifier.global.netlogo",
+					"match": "^\\s*(globals|breed)\\s"
+				},
+				{
+					"name": "keyword.control.conditional.netlogo",
+					"match": "^\\s*(if|ifelse|ifelse-value)\\s"
+				},
+				{
+					"name": "keyword.control.repeat.netlogo",
+					"match": "^\\s*(ask|ask-concurrent|foreach|loop|repeat|while|every|with-local-randomness|without-interruption)\\s"
+				},
+				{
+					"name": "keyword.control.statement.netlogo",
+					"match": "^\\s*(end|report|stop|wait)\\s"
+				},
+				{
+					"name": "keyword.operator.logical.netlogo",
+					"match": "^\\s*(and|not|or|xor)\\s"
+				},
+				{
+					"name": "keyword.control.exception.netlogo",
+					"match": "^\\s*(error|error-message)\\s"
+				},
+				{
+					"name": "keyword.other.netlogo",
+					"match": "^\\s*(error|error-message)\\s"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.netlogo",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.netlogo",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line.semicolon.netlogo",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.netlogo"
+				}
+			},
+			"begin": ";",
+			"end": "$\\n?"
+		},
+		"function": {
+			"patterns": [
+				{
+					"name": "meta.class.netlogo",
+					"captures": {
+						"1": {
+							"name": "storage.type.class.netlogo"
+						},
+						"2": {
+							"name": "entity.name.type.class.netlogo"
+						}
+					},
+					"match": "^\\s*(to|to-report)\\s+(\\w+[-\\w]*)"
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.netlogo",
+					"match": "(?<=[\\s\\-\\+\\*\\/\\\\=:\\[\\(\\{,]|^)\\d*\\.?\\d+([eE][+-]?\\d)?([0-9&&[^\\.]])*(i|j)?\\b"
+				},
+				{
+					"name": "constant.language.netlogo",
+					"match": "(^|\\s)(true|false)(\\s|$)"
+				}
+			]
+		},
+		"brackets": {
+			"contentName": "meta.brackets.netlogo",
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.brackets.netlogo"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "meta.brackets.netlogo"
+				}
+			},
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+		"operators": {
+			"name": "keyword.operator.symbols.netlogo",
+			"comment": "Operator Symbols",
+			"match": "(?<=\\s)(=|!=|>|>=|<|<=|&|&&|:|\\||\\|\\||\\+|-|\\*|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)",
+		},
+		"parens": {
+			"contentName": "meta.parens.netlogo",
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.parens.netlogo"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "meta.parens.netlogo"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#end_in_parens"
+				},
+				{
+					"include": "$self"
+				}
+			],
+		},
+		"builtin_functions": {
+			"patterns": [
+				{
+					"name": "support.function.builtin.netlogo",
+					"match": "(?x)\\b(but-first|but-last|empty?|filter|first|fput|lput|let|set|is-list?|histogram|item|last|length|list|lput|map|member?|modes|n-of|n-values|of|position|one-of|reduce|remove|remove-duplicates|remove-item|replace-item|reverse|sentence|shuffle|sort|sort-by|sort-on|sublist)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.nlogo"
+}
