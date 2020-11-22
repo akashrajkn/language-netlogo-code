@@ -2,6 +2,14 @@
     "name": "language-netlogo-code",
     "displayName": "Netlogo Syntax Highlighting",
     "description": "Netlogo Syntax Highlighting",
+    "publisher": "akashrajkn",
+    "author": {
+        "name": "akashrajkn"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akashrajkn/language-netlogo-code"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.51.0"
