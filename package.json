@@ -10,7 +10,8 @@
         "type": "git",
         "url": "https://github.com/akashrajkn/language-netlogo-code"
     },
-    "version": "0.0.1",
+    "version": "0.0.4",
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.51.0"
     },
